@@ -83,7 +83,7 @@ def main(filename, startpoint):
     while(True):
         if not paused:
             # record screen
-            screen = grabscreen(region(0,30,int(width), int(height)+26))
+            screen = grabscreen(region=(0,30,int(width), int(height)+26))
             # resize screen to Neural Network width and height
             screen = cv2.resize(screen, (int(nn_width), int(nn_height)))
             # convert color from BGR to RGB
@@ -98,10 +98,11 @@ def main(filename, startpoint):
 
             if len(training_data) % 100 == 0:
                 # print length of training data
-                print("Länge der Trainingsdaten: ")+str(len(training_data))
+                print("Länge der Trainingsdaten: "+str(len(training_data)))
 
                 if len(training_data) == 500:
                     # save training data to file
+                    print("Länge: "+str(len(training_data)) + ", speichere...")
                     np.save(filename, training_data)
                     # clear training data
                     training_data = []

@@ -20,7 +20,7 @@ epochs = 5
 # batch-size of Neural Network
 batchsize = 32
 # ammount of training files
-file_end = 57
+file_end = 18
 # id of model, change if you want multiple
 model_id = 1
 # model name with id, learning rate and number of epochs
@@ -41,7 +41,7 @@ for e in range(int(epochs)):
             filename = "trainingsdaten-{}.npy".format(i)
             # load training data
             training_data = np.load(filename)
-            print("Daten werden geladen: %s, Länge: %s" % (dateiname,str(len(trainingsdaten))))
+            print("Daten werden geladen: %s, Länge: %s" % (filename,str(len(training_data))))
 
             # splitting train and test data
             train = training_data[:-50]
