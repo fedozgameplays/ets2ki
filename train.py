@@ -4,9 +4,9 @@ from random import shuffle
 import os
 
 # window width
-width = 960
+width = 1280
 # window height
-height = 540
+height = 720
 # Neural Network width
 nn_width = 480
 # Neural Network height

@@ -18,9 +18,9 @@ sd = [0,0,0,0,0,0,0,1,0]
 nokey = [0,0,0,0,0,0,0,0,1]
 
 # window width
-width = 960
+width = 1280
 # window height
-height = 540
+height = 720
 # Neural Network width
 nn_width = 480
 # Neural Network height
