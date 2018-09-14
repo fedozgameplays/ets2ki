@@ -62,7 +62,7 @@ for e in range(int(epochs)):
             # train model
             model.fit({"input": x}, {"targets": y}, n_epoch=1,
                           validation_set=({"input": test_x}, {"targets": test_y}),
-                          snapshot_step=2500, show_metric=False, run_id=model_name, batch_size=batchsize)
+                          snapshot_step=2500, show_metric=True, run_id=model_name, batch_size=batchsize)
             
             if count%10 == 0:
                     print("Model wird gespeichert...")

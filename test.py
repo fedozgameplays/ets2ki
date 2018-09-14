@@ -44,14 +44,14 @@ paused = False
 while(True):
     if not paused:
         # record screen
-        screen = grabscreen(region(0,30,int(width), int(height)+26))
+        screen = grabscreen(region=(0,30,int(width), int(height)+26))
         # resize screen to Neural Network width and height
         screen = cv2.resize(screen, (int(nn_width), int(nn_height)))
         # convert color from BGR to RGB
         screen = cv2.cvtColor(screen, cv2.COLOR_BGR2RGB)
 
         prediction = model.predict([screen.reshape(int(nn_width), int(nn_height), 3)])[0]
-        prediction = np.array(prediction)
+        prediction = np.array(prediction) * np.array([0.0, 1.0, 1.0, 1.0,  1.0,   1.0, 1.0, 1.0, 0.1])
         choice = np.argmax(prediction)
 
         if choice == 0:
@@ -96,7 +96,6 @@ while(True):
             else:
                 # if running, pause
                 paused = True
-                directions.release()
                 time.sleep(1)
         
 
